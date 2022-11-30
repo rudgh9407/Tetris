@@ -10,7 +10,7 @@ app.set('views', './src/html');
 let con = mysql.createConnection({      //--- MySQL DB Connect ---//
   host: `localhost`,
   user: `c16st10`,
-  password: `Z9U7dffwthoQloDI`,
+  password: `*************`,
   database: `c16st10`
 });
 app.get("/tetris", (req,res)=>{      //--- '/tetirs' Get Mode ---//
