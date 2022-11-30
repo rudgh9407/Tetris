@@ -1,0 +1,138 @@
+doctype html
+html(lang="KO")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Jua&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css")
+    title TETRIS
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js")
+    link(rel="stylesheet", href="/build/css/tetris.css")
+  body
+    div#sticker 포트폴리오 용으로 제작 되었습니다.
+    section.loading_view
+      p
+        span T
+        span E
+        span T
+        span R
+        span I
+        span S
+    section.login_box 
+      section.menu_bar
+        article 
+        article 
+        article
+        p LOGIN
+      p ID를 입력하세요.
+      article
+        input.input_id(type="text", maxLength="8", placeholder="ID")
+        button.login_btn LOGIN
+
+    section.main_area
+      section.menu_bar 
+        article 
+        article 
+        article
+        p TETRIS
+      section.view_panel
+        section.rank_box 
+          section
+            p rank
+            p ID 
+            p score
+          section
+            section.rank_area
+              each value, index in rank_list 
+                p= (index+1) + ". "
+            section.id_area
+              each value, index in rank_list 
+                p= value.name
+            section.score_area
+              each value, index in rank_list 
+                p= value.score
+      main
+        section.background_view
+      section.control_panel
+        section.preview_box
+          p.preview_text NEXT
+          article 
+            div 
+            div 
+            div 
+            div 
+            div 
+          article 
+            div 
+            div 
+            div 
+            div 
+            div 
+        form(method="post")
+          section.level_box 
+            input.current_id(type="text", value="", name="current_id", readonly)
+            p LV.
+              span 0
+          article.score_box 
+            p SCORE 
+            input.score_number(type="text", value="0", name="current_score", readonly)
+          input.end_btn(type="submit", value="", name="end_btn")
+        article.help_box
+          article
+            i.xi-arrow-left 
+            p move left 
+          article
+            i.xi-arrow-right
+            p move right 
+          article
+            i.xi-arrow-up
+            p rotate 90deg
+          article
+            i.xi-arrow-down
+            p fast down
+          article
+            i.xi-space-bar
+            p quick down
+        article.control_box
+          article.menu_bar
+            article 
+            p CONTROLLER
+          article 
+            div.click_up
+              i.xi-arrow-up
+          article 
+            div.click_left
+              i.xi-arrow-left 
+            div.click_down
+              i.xi-arrow-down
+            div.click_right
+              i.xi-arrow-right
+          article
+            div.click_space 
+              i.xi-space-bar
+        section.btn_area
+          article.start_btn 
+            i.xi-play
+            p START
+          article.pause_btn 
+            i.xi-pause
+            p PAUSE
+      
+    section.fail_box 
+      p 
+        span G
+        span A
+        span M
+        span E 
+        span O 
+        span V 
+        span E 
+        span R
+        
+    section.pause_box 
+      i.xi-pause
+
+    script(src="/src/js/tetris.js")

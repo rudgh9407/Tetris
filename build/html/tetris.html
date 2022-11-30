@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="KO">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <title>TETRIS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../../build/css/tetris.css">
+  </head>
+  <body>
+    <section class="loading_view">
+      <p><span>T</span><span>E</span><span>T</span><span>R</span><span>I</span><span>S</span></p>
+    </section>
+    <section class="login_box"> 
+      <p>ID를 입력하세요.</p>
+      <article>
+        <input class="input_id" type="text" maxLength="8" placeholder="ID">
+        <button class="login_btn">LOGIN</button>
+      </article>
+    </section>
+    <section class="view_panel">
+      <section class="preview_box">
+        <p class="preview_text">NEXT</p>
+        <article> 
+          <div> </div>
+          <div> </div>
+          <div> </div>
+          <div> </div>
+          <div> </div>
+        </article>
+        <article> 
+          <div> </div>
+          <div> </div>
+          <div> </div>
+          <div> </div>
+          <div> </div>
+        </article>
+      </section>
+      <section class="rank_box"> 
+        <section class="rank_area">
+          <p>rank</p>
+          <p>1.</p>
+          <p>2.</p>
+          <p>3.</p>
+          <p>4.</p>
+          <p>5.</p>
+          <p>6.</p>
+          <p>7.</p>
+          <p>8.</p>
+          <p>9.</p>
+          <p>10.</p>
+        </section>
+        <section class="id_area">
+          <p>ID </p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+        </section>
+        <section class="score_area">
+          <p>score</p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+        </section>
+      </section>
+    </section>
+    <main>
+      <article>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+      </article>
+      <article>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+      </article>
+      <section class="background_view"></section>
+      <article>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+      </article>
+      <article>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+      </article>
+    </main>
+    <section class="control_panel">
+      <form method="post">
+        <section class="level_box"> 
+          <input class="current_id" type="text" value="" name="current_id" readonly>
+          <p>LV.<span>0</span></p>
+        </section>
+        <article class="score_box"> 
+          <p>SCORE </p>
+          <input class="score_number" type="text" value="0" name="current_score" readonly>
+        </article>
+        <input class="end_btn" type="submit" value="" name="end_btn">
+      </form>
+      <article class="help_box"><i class="xi-arrow-left"> </i>
+        <p>move left </p><i class="xi-arrow-right"></i>
+        <p>move right </p><i class="xi-arrow-up"></i>
+        <p>rotate 90deg</p><i class="xi-arrow-down"></i>
+        <p>fast down</p><i class="xi-space-bar"></i>
+        <p>quick down</p>
+      </article>
+      <article class="control_box">
+        <div> </div>
+        <div class="click_up"><i class="xi-arrow-up"></i></div>
+        <div> </div>
+        <div class="click_left"><i class="xi-arrow-left"> </i></div>
+        <div class="click_down"><i class="xi-arrow-down"></i></div>
+        <div class="click_right"><i class="xi-arrow-right"></i></div>
+        <div class="click_space"> <i class="xi-space-bar"></i></div>
+      </article>
+      <section class="btn_area">
+        <article class="start_btn"> <i class="xi-play"></i></article>
+        <article class="pause_btn"> <i class="xi-pause"></i></article>
+      </section>
+    </section>
+    <section class="fail_box"> 
+      <p> <span>G</span><span>A</span><span>M</span><span>E </span><span>O </span><span>V </span><span>E </span><span>R</span></p>
+    </section>
+    <section class="pause_box"> <i class="xi-pause"></i></section>
+    <script src="../../../src/js/tetris.js"></script>
+  </body>
+</html>
